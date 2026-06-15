@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📝 Todo List V2 (Advanced Version)
 
 A simple but upgraded Todo List application built using **HTML, CSS, and JavaScript**.  
@@ -39,3 +40,6 @@ This project focuses on improving DOM manipulation, localStorage handling, and U
 ```javascript
 localStorage.setItem("todo", JSON.stringify(todo));
 JSON.parse(localStorage.getItem("todo"));
+=======
+THIS IS A TODO LIST V2 less modren more advance just need more tweaks I'll handle them later it almost mid-night so SEE YOU MY INVISIBLE FOLLOWERS😊
+>>>>>>> f34df1851108b3cf81998029fe6f3f67069062bb
