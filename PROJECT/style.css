@@ -189,3 +189,186 @@ header{
     cursor: pointer;
     margin-left: 6px;
 }
+/* ========================= */
+/* Tablet (768px and below) */
+/* ========================= */
+@media (max-width: 768px){
+
+    body{
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    header{
+        margin-top: 15px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .upperPart{
+        width: 95%;
+    }
+
+    .upperPart ul{
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .containerInput{
+        width: 95%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .textContainer{
+        width: 90%;
+        height: 40px;
+        padding-left: 12px;
+    }
+
+    .btnAdd{
+        width: 100%;
+        padding: 12px;
+    }
+
+    .errorP{
+        width: 80%;
+        font-size: 14px;
+    }
+
+    #main{
+        width: 90%;
+        height: 400px;
+        margin-top: 20px;
+    }
+
+    .mainDivP{
+        height: auto;
+        min-height: 45px;
+        padding: 5px;
+    }
+
+    .paraStyle,
+    .paraStyleAfter{
+        width: 70%;
+        padding-left: 10px;
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+    .divNew{
+        width: 30%;
+        justify-content: center;
+    }
+
+    .rmBtn{
+        font-size: 12px;
+        padding: 6px;
+        margin-left: 2px;
+    }
+}
+
+
+/* ========================= */
+/* Mobile (480px and below) */
+/* ========================= */
+@media (max-width: 480px){
+
+    #greet{
+        font-size: 13px;
+        padding: 8px 18px;
+    }
+
+    .upperPart{
+        width: 98%;
+        border-radius: 15px;
+    }
+
+    .containerInput{
+        width: 98%;
+        border-radius: 15px;
+        padding: 10px;
+    }
+
+    .textContainer{
+        width: 100%;
+        font-size: 14px;
+        height: 38px;
+    }
+
+    .btnAdd{
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .errorP{
+        width: 95%;
+        font-size: 12px;
+    }
+
+    #main{
+        width: 95%;
+        height: 350px;
+        border-radius: 15px;
+    }
+
+    .mainDivP{
+        width: 95%;
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        gap: 8px;
+        border-radius: 15px;
+    }
+
+    .paraStyle,
+    .paraStyleAfter{
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding-left: 0;
+        font-size: 13px;
+    }
+
+    .divNew{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .rmBtn{
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    .inputContainer{
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+
+
+@media (max-width: 320px){
+
+    #main{
+        height: 300px;
+    }
+
+    #greet{
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .btnAdd{
+        font-size: 12px;
+    }
+
+    .textContainer{
+        font-size: 12px;
+    }
+    .inputContainer{
+        margin: 0 auto;
+        width: 90%;
+    }
+}
