@@ -20,6 +20,65 @@ window.addEventListener("load", () => {
   input.value = "";
 });
 
+function createTask(text, isDone = false) {
+  const div = document.createElement("div");
+  div.classList.add("mainDivP");
+  main.appendChild(div);
+
+  const para = document.createElement("p");
+  para.innerHTML = text;
+  para.classList.add("paraStyle");
+  if (isDone) para.classList.add("paraStyleAfter");
+  div.appendChild(para);
+
+  const divNew = document.createElement("div");
+  divNew.classList.add("divNew");
+  div.appendChild(divNew);
+
+  const rmBtn = document.createElement("button");
+  rmBtn.classList.add("rmBtn");
+  rmBtn.innerText = "RM";
+  divNew.appendChild(rmBtn);
+  rmBtn.addEventListener("click", () => {
+    div.remove();
+    saveTasks();
+  });
+
+  const doneBtn = document.createElement("button");
+  doneBtn.classList.add("rmBtn");
+  doneBtn.innerText = "DN";
+  divNew.appendChild(doneBtn);
+  doneBtn.addEventListener("click", () => {
+    para.classList.toggle("paraStyleAfter");
+    saveTasks();
+  });
+
+  const editBtn = document.createElement("button");
+  editBtn.classList.add("rmBtn");
+  editBtn.innerText = "ED";
+  divNew.appendChild(editBtn);
+  editBtn.addEventListener("click", () => {
+    input.value = para.innerText;
+    div.remove();
+    saveTasks();
+  });
+}
+
+function saveTasks() {
+  const tasks = [...main.querySelectorAll(".mainDivP")].map((div) => {
+    const para = div.querySelector(".paraStyle");
+    return { text: para.innerText, done: para.classList.contains("paraStyleAfter") };
+  });
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasks() {
+  const saved = JSON.parse(localStorage.getItem("tasks")) || [];
+  saved.forEach((task) => createTask(task.text, task.done));
+}
+
+loadTasks();
+
 btn.addEventListener("click", () => {
   let errorMsg = document.querySelector(".errorP");
   if (input.value === "") {
@@ -29,45 +88,10 @@ btn.addEventListener("click", () => {
     p.classList.add("errorP");
     mainContainer.appendChild(p);
   } else {
-    if (errorMsg) {
-      errorMsg.remove();
-    }
-    const div = document.createElement("div");
-    div.classList.add("mainDivP");
-    main.appendChild(div);
-    const para = document.createElement("p");
-    para.innerHTML = input.value;
-    para.classList.add("paraStyle");
-    div.appendChild(para);
-    const divNew = document.createElement("div");
-    divNew.classList.add("divNew");
-    div.appendChild(divNew);
+    if (errorMsg) errorMsg.remove();
+    createTask(input.value);
     input.value = "";
-    const rmBtn = document.createElement("button");
-    rmBtn.classList.add("rmBtn");
-    rmBtn.innerText = "RM"
-    divNew.appendChild(rmBtn)
-    rmBtn.addEventListener("click",(e)=>{
-        div.remove()
-    })
-    const doneBtn = document.createElement("button")
-    doneBtn.classList.add("rmBtn")
-    doneBtn.innerText = "DN"
-    divNew.appendChild(doneBtn)
-    doneBtn.addEventListener("click",()=>{
-        para.classList.toggle("paraStyleAfter")
-    })
-    const editBtn = document.createElement("button")
-    editBtn.classList.add("rmBtn")
-    editBtn.innerText = "ED"
-    divNew.appendChild(editBtn)
-    editBtn.addEventListener("click",()=>{
-        let arr = []
-        arr.push(para.innerText)
-        div.remove()
-        input.value = arr[0]
-        
-    })
+    saveTasks();
   }
 });
 
