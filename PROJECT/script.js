@@ -70,3 +70,95 @@ btn.addEventListener("click", () => {
     })
   }
 });
+
+const greet = document.getElementById("greet");
+greet.style.color = "lime";
+greet.style.transition = "0.5s";
+
+const dateTime = new Date();
+const hour = dateTime.getHours();
+
+if (hour >= 5 && hour < 12) {
+  switch (true) {
+    case hour === 5:
+      greet.innerHTML = "EARLY START = BIG WIN ";
+      break;
+    case hour === 6:
+      greet.innerHTML = "READY FOR A BRAND NEW DAY";
+      break;
+    case hour === 7:
+      greet.innerHTML = "EXERCISE MAKES A GREAT MORNING";
+      break;
+    case hour === 8:
+      greet.innerHTML = "WORK HARD";
+      break;
+    case hour === 9:
+      greet.innerHTML = "BUILD YOUR FUTURE";
+      break;
+    case hour === 10:
+      greet.innerHTML = "TIRED ALREADY..?";
+      break;
+    case hour === 11:
+      greet.innerHTML = "DID SOMETHING OR STILL WAITING?";
+      break;
+    default:
+      greet.innerHTML = "GOOD MORNING";
+  }
+}
+
+else if (hour >= 12 && hour < 17) {
+  switch (true) {
+    case hour === 12:
+      greet.innerHTML = "GOOD AFTERNOON";
+      break;
+    case hour === 13:
+      greet.innerHTML = "WHAT'S ON YOUR MIND?";
+      break;
+    case hour === 14:
+      greet.innerHTML = "WHAT A NICE DAY";
+      break;
+    case hour === 15:
+      greet.innerHTML = "DISCIPLINE IS THE KEY";
+      break;
+    case hour === 16:
+      greet.innerHTML = "TIME IS EVERYTHING";
+      break;
+    default:
+      greet.innerHTML = "BACK TO WORK";
+  }
+}
+
+else if (hour >= 17 && hour < 21) {
+  switch (true) {
+    case hour === 17:
+      greet.innerHTML = "DAY ALMOST DONE";
+      break;
+    case hour === 18:
+      greet.innerHTML = "KEEP PUSHING";
+      break;
+    case hour === 19:
+      greet.innerHTML = "SMALL STEPS MATTER";
+      break;
+    case hour === 20:
+      greet.innerHTML = "PROGRESS NEVER STOPS";
+      break;
+    default:
+      greet.innerHTML = "GOOD EVENING";
+  }
+}
+
+else {
+  switch (true) {
+    case hour === 21:
+      greet.innerHTML = "REST BUT DON'T QUIT";
+      break;
+    case hour === 22:
+      greet.innerHTML = "ANOTHER DAY COMPLETED";
+      break;
+    case hour === 23:
+      greet.innerHTML = "DREAM BIG";
+      break;
+    default:
+      greet.innerHTML = "GOOD NIGHT";
+  }
+}
